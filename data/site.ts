@@ -4,7 +4,7 @@ export const siteConfig = {
     shortName: "SN",
     title: "A clear statement about what you do",
     description: "A short description for search results and social sharing.",
-    siteUrl: "https://example.com",
+    siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.com",
     locale: "en_AU",
     language: "en-AU",
     location: "City, Country",
