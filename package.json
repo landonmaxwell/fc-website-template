@@ -1,0 +1,36 @@
+{
+  "name": "fc-website-template",
+  "version": "1.0.0",
+  "description": "A lightweight Next.js website template by Landon Maxwell and Froghat Creative.",
+  "author": "Landon Maxwell / Froghat Creative (https://froghatcreative.com/)",
+  "homepage": "https://github.com/landonmaxwell/fc-website-template#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/landonmaxwell/fc-website-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/landonmaxwell/fc-website-template/issues"
+  },
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run lint && npm run typecheck"
+  },
+  "dependencies": {
+    "next": "^16.2.12",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.43",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "^16.2.12",
+    "typescript": "^5.9.3"
+  }
+}
