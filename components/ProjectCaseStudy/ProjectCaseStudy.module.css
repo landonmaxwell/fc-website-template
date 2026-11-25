@@ -1,0 +1,15 @@
+.page { min-height: 100vh; background: #000; color: #fff; }
+.header { max-width: 76rem; margin: auto; padding: 10rem 1.5rem 5rem; }
+.header h1 { margin: 1rem 0; font-size: clamp(3.5rem, 9vw, 7rem); letter-spacing: -.06em; }
+.header > p:first-child, .label { color: rgb(255 255 255 / .4); font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; }
+.summary { max-width: 48rem; color: rgb(255 255 255 / .62); font-size: 1.4rem; line-height: 1.55; }
+.header dl { display: grid; max-width: 22rem; grid-template-columns: auto 1fr; gap: .5rem 1.5rem; }
+.header dt { color: rgb(255 255 255 / .35); }
+.story { display: grid; max-width: 70rem; margin: auto; grid-template-columns: .35fr 1fr; gap: 4rem; padding: 8rem 1.5rem; }
+.story ul { padding: 0; list-style: none; color: rgb(255 255 255 / .65); }
+.narrative { display: grid; gap: 3rem; color: rgb(255 255 255 / .65); font-size: 1.1rem; line-height: 1.8; }
+.lead { color: rgb(255 255 255 / .84); font-size: 1.5rem; }
+.narrative a { color: inherit; text-decoration-color: rgb(255 255 255 / .35); text-underline-offset: .2em; }
+@media (max-width: 800px) { .story { grid-template-columns: 1fr; } }
+
+

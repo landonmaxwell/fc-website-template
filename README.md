@@ -4,6 +4,23 @@ A lightweight Next.js starter for quickly making a portfolio, studio or small-bu
 
 Created by [Landon Maxwell](https://github.com/landonmaxwell) and [Froghat Creative](https://froghatcreative.com/). The `fc` in the repository name stands for Froghat Creative.
 
+## Version
+
+- Current version: `1.1.0`
+- Last updated: 25 November 2026 (`2026-11-25`)
+
+### Changelog
+
+#### 1.1.0 (2026-11-25)
+
+- Replaced simplified header, footer, gallery, back-to-top, work filters, selected work and case-study layouts with the shared library components.
+- Added shared footer navigation and Froghat Creative credit.
+- Recorded installed versions and local adaptations in [component tracking](docs/REUSABLE-COMPONENTS.md).
+
+#### 1.0.0 (2026-11-24)
+
+- Initial public template with SiteFoundation and Vercel deployment.
+
 ## Included
 
 - Responsive homepage with hero, selected work, partner marquee, about, services, optional testimonials and contact

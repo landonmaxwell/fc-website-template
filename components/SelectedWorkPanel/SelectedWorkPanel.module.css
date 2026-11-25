@@ -1,0 +1,10 @@
+.section { padding: 8rem 1.5rem; background: #000; color: #fff; }
+.inner { width: 100%; max-width: 60vw; margin: auto; }
+.inner header { margin-bottom: 4rem; }
+.inner h2 { margin: 0; font-size: clamp(2.25rem, 5vw, 3.5rem); }
+.inner header p { max-width: 38rem; color: rgb(255 255 255 / .7); line-height: 1.6; }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
+.featured { grid-column: 1 / -1; }
+@media (max-width: 800px) { .inner { max-width: none; } .grid { grid-template-columns: 1fr; } .featured { grid-column: auto; } }
+
+

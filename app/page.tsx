@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import SelectedWorkPanel from "@/components/SelectedWorkPanel/SelectedWorkPanel";
 import ProjectCard from "@/components/ProjectCard";
 import JsonLd from "@/components/JsonLd";
 import { projects } from "@/data/projects";
@@ -15,16 +16,13 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  const featured = projects.filter((project) => project.featured).slice(0, 2);
-  const standard = projects.filter((project) => !project.featured).slice(0, 4);
-  const selected = [featured[0], ...standard, featured[1]].filter(Boolean);
   return <main>
     <JsonLd data={[
       { "@context": "https://schema.org", "@type": "WebSite", "@id": `${siteConfig.identity.siteUrl}/#website`, url: siteConfig.identity.siteUrl, name: siteConfig.identity.name, description: siteConfig.identity.description, inLanguage: siteConfig.identity.language, publisher: { "@id": `${siteConfig.identity.siteUrl}/#owner` } },
       { "@context": "https://schema.org", "@type": siteConfig.seo.ownerType, "@id": `${siteConfig.identity.siteUrl}/#owner`, name: siteConfig.identity.name, url: siteConfig.identity.siteUrl, description: siteConfig.identity.description, location: siteConfig.identity.location, sameAs: siteConfig.social.map((item) => item.href) },
     ]} />
     <section className="hero" id="top"><div className="hero-media">{siteConfig.hero.image && <Image src={siteConfig.hero.image} alt="" fill priority sizes="100vw"/>}{siteConfig.hero.video && <video autoPlay muted loop playsInline poster={siteConfig.hero.image}><source src={siteConfig.hero.video}/></video>}</div><div className="hero-overlay"/><div className="hero-copy"><span>{siteConfig.hero.eyebrow}</span><h1>{siteConfig.hero.heading}</h1><p>{siteConfig.hero.body}</p><div><Link className="button primary" href={siteConfig.hero.primaryAction.href}>{siteConfig.hero.primaryAction.label}</Link><Link className="button" href={siteConfig.hero.secondaryAction.href}>{siteConfig.hero.secondaryAction.label}</Link></div></div></section>
-    <section className="section selected-work"><header className="section-heading"><span>Selected work</span><h2>A few things worth seeing.</h2></header><div className="selected-grid">{selected.map((project, index) => <ProjectCard key={project.slug} project={project} featured={index === 0 || index === selected.length - 1}/>)}</div><Link className="large-link" href="/work">View all work →</Link></section>
+    <SelectedWorkPanel title="Selected work" description="A few things worth seeing." items={projects.map(project => ({ ...project, id: project.slug }))} renderItem={(project, options) => <ProjectCard project={project} featured={options.featured}/>} footer={<Link className="large-link" href="/work">View all work</Link>} />
     <section className="partner-section" aria-label="Clients and collaborators"><p>Selected clients, collaborators and partners</p><div className="marquee"><div>{[...siteConfig.partners, ...siteConfig.partners].map((partner, index) => <span key={`${partner}-${index}`} aria-hidden={index >= siteConfig.partners.length || undefined}>{partner}</span>)}</div></div></section>
     <section className="section split" id="about"><span className="section-label">About</span><div><h2>{siteConfig.about.heading}</h2><p>{siteConfig.about.body}</p></div></section>
     <section className="section" id="services"><header className="section-heading"><span>Capabilities</span><h2>Ways we can work together.</h2></header><div className="services">{siteConfig.services.map((service, index) => <article key={service.title}><span>0{index + 1}</span><h3>{service.title}</h3><p>{service.description}</p></article>)}</div></section>

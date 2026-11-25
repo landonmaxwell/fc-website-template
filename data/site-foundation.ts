@@ -60,6 +60,9 @@ export const siteFoundationSettings = mergeSiteSettings({
   },
   footer: {
     ...defaultSiteSettings.footer,
+    groups: [{ label: "Explore", href: "/", links: siteConfig.navigation.map(item => ({ ...item })) }],
+    creditLabel: "Site design by Froghat Creative",
+    creditHref: "https://froghatcreative.com/",
     legalLinks: [{ label: "Privacy", href: "/privacy" }],
   },
   advanced: {

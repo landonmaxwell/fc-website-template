@@ -11,3 +11,9 @@
 @media(max-width:1100px){:root{--content:calc(100% - 2rem);--wide:calc(100% - 2rem)}}
 @media(max-width:700px){.site-header{height:72px}.brand strong{display:none}.menu-button{display:grid;width:42px;height:42px;place-content:center;gap:4px;border:1px solid #ffffff24;border-radius:50%}.menu-button i{display:block;width:16px;height:1px;background:currentColor}.menu-button span{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}.site-header nav{position:absolute;top:64px;right:0;display:none;min-width:200px;align-items:stretch;border:1px solid #ffffff20;border-radius:14px;background:var(--surface);padding:.6rem;box-shadow:0 20px 60px #000}.site-header nav.open{display:grid}.site-header nav a{padding:.75rem}.hero{min-height:calc(100svh - 72px)}.hero-copy{margin-bottom:8vh}.hero-copy>div{align-items:flex-start;flex-direction:column}.section-heading,.split,.testimonials,.project-story{grid-template-columns:1fr;gap:1.3rem}.selected-grid,.work-grid{grid-template-columns:1fr}.project-card.featured{min-height:480px}.services{grid-template-columns:1fr}.services article{min-height:220px}.services h3{margin-top:3rem}.site-footer{align-items:flex-start;flex-direction:column;justify-content:center;gap:1rem}.project-story{margin-block:5rem}.gallery-section{padding:5rem 1rem}.gallery button{min-width:100%}.external-links{align-items:flex-start;flex-direction:column}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.marquee>div{animation:none}.project-card,.gallery img{transition:none}}
+
+/* Shared component integration. Keep desktop content within the site width. */
+.work-search > div > div:last-child { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem; }
+.siteFoundationRoot { --responsive-header-foreground:var(--site-text); }
+main { padding-top:88px; }
+@media(max-width:800px){.work-search > div > div:last-child{grid-template-columns:1fr;}main{padding-top:72px;}}
